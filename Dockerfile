@@ -1,4 +1,5 @@
-FROM alpine:3.18.0
+ARG ALPINE_VERSION
+FROM alpine:${ALPINE_VERSION}
 
 ENV FTP_USER=user
 ENV FTP_PASS=password
