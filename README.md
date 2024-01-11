@@ -13,6 +13,8 @@ credentials:
 
 * `FTP_USER`: username for the FTP account (default: `user`)
 * `FTP_PASS`: password for the FTP account (default: `password`)
+* `FTP_WRITE_ENABLE`: set to `NO` (default) to make the FTP read only, set to
+  `YES` to enable write permissions
 
 ## Ports and volumes
 

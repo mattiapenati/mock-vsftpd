@@ -6,4 +6,4 @@ echo "$FTP_USER:$FTP_PASS" | chpasswd >& /dev/null
 
 touch /var/log/vsftpd.log
 tail -f /var/log/vsftpd.log >> /dev/stdout &
-vsftpd /etc/vsftpd/vsftpd.conf
+vsftpd -owrite_enable=${FTP_WRITE_ENABLE} /etc/vsftpd/vsftpd.conf

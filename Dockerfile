@@ -3,6 +3,7 @@ FROM alpine:${ALPINE_VERSION}
 
 ENV FTP_USER=user
 ENV FTP_PASS=password
+ENV FTP_WRITE_ENABLE=NO
 
 RUN set -eux; \
     apk update; \
