@@ -41,10 +41,18 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
 
+      - name: Extract alpine version
+        uses: bhowell2/github-substring-action@1.0.2
+        id: alpine_version
+        with:
+          value: ${{ github.ref_name }}
+          index_of_str: "v"
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
+          build-args: ALPINE_VERSION=${{ steps.alpine_version.outputs.substring }}
           push: true
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
